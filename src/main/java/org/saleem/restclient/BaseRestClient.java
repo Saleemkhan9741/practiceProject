@@ -5,13 +5,15 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.saleem.enums.HttpType;
+import org.saleem.enums.Resources;
 
 import java.text.MessageFormat;
 import java.util.HashMap;
 
-public class RestClient {
+public class BaseRestClient {
 
-    private static final Logger LOGGER = LogManager.getLogger(RestClient.class);
+    private static final Logger LOGGER = LogManager.getLogger(BaseRestClient.class);
 
     private String baseUrl;
     private RequestSpecification request;
@@ -19,11 +21,13 @@ public class RestClient {
     private String username;
     private String password;
 
-    private RestClient(String baseUrl){
+    public BaseRestClient(String baseUrl){
         this.baseUrl = baseUrl;
     }
 
-    private RestClient(String baseUrl, String username, String password){
+    public BaseRestClient(){}
+
+    private BaseRestClient(String baseUrl, String username, String password){
         this.baseUrl = baseUrl;
         this.username = username;
         this.password = password;
@@ -36,13 +40,17 @@ public class RestClient {
         }
     }
 
+    public Response whenPostRequestIsInvoked(Resources resources, HashMap<String,String> headers, String payload){
+        return this.whenRequestIsInvoked(HttpType.POST,resources,headers,payload,null,null,null);
+    }
+
     public Response whenRequestIsInvoked(HttpType httpType,
-                                     Resources resource,
-                                     String payload,
-                                     HashMap<String, Object> headers,
-                                     String queryParams,
-                                     String entityId,
-                                     String... urlParams
+                                         Resources resource,
+                                         HashMap<String, String> headers,
+                                         String payload,
+                                         String queryParams,
+                                         String entityId,
+                                         String... urlParams
                                      ) {
         RestAssured.baseURI = this.baseUrl;
         request = RestAssured.given();

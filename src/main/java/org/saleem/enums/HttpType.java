@@ -1,4 +1,4 @@
-package org.saleem.restclient;
+package org.saleem.enums;
 
 public enum HttpType {
 

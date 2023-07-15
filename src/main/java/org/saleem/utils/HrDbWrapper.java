@@ -44,6 +44,10 @@ public class HrDbWrapper extends BaseDbWrapper{
         return namesOfAllEmployees;
     }
 
+    public void closeConnection(){
+        hrDbWrapper.closeConnections();
+    }
+
     public static void main(String[] args) {
         getInstance().getAllEmployees().forEach(System.out::println);
     }

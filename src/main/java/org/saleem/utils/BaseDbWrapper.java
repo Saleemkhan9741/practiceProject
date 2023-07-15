@@ -12,6 +12,7 @@ public class BaseDbWrapper {
     private String dbName;
     private String username;
     private String password;
+    private Connection connection;
 
     public BaseDbWrapper(String url, String port, String dbName) {
         this.url=url;
@@ -28,16 +29,15 @@ public class BaseDbWrapper {
     }
 
     public Connection getConnection(){
-        Connection con;
         try{
             Class.forName("org.postgresql.Driver");
-            con=DriverManager.getConnection(
+            connection=DriverManager.getConnection(
                     String.format("%s:%s/%s"+"?sslmode=disable",
                             url,port,dbName),username,password);
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-        return con;
+        return connection;
     }
 
     public ResultSet executeQuery(String query){
@@ -52,7 +52,7 @@ public class BaseDbWrapper {
 
     public void closeConnections(){
         try {
-            getConnection().close();
+            connection.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
