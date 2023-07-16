@@ -10,9 +10,9 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class Test1 extends BaseTest{
+public class CreateUsersTest extends BaseTest{
 
-    private static final Logger LOGGER = LogManager.getLogger(Test1.class);
+    private static final Logger LOGGER = LogManager.getLogger(CreateUsersTest.class);
 
     @DataProvider(name = "createUsers")
     private Object[][] createUsers(){
@@ -29,11 +29,6 @@ public class Test1 extends BaseTest{
                 .createUsers(SerializationHelper.getObjectMapper().writeValueAsString(user));
         Assert.assertEquals(createdUser.getJob(),job);
         Assert.assertEquals(createdUser.getName(),name);
-    }
-
-    @Test(groups = "smoke")
-    public void verifyListOfUsers(){
-        ReqresClient.getInstance().getListOfUsers();
     }
 
 }
