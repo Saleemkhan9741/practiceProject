@@ -22,7 +22,7 @@ public class Test1 extends BaseTest{
         };
     }
 
-    @Test(dataProvider = "createUsers")
+    @Test(dataProvider = "createUsers",groups = "regression")
     public void verifyUserCreation(String name, String job) throws JsonProcessingException {
         User user = User.builder().name(name).job(job).build();
         User createdUser = ReqresClient.getInstance()
