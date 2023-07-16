@@ -40,7 +40,7 @@ public class ReqresClient extends BaseRestClient{
         HashMap<String, String> headers = new HashMap<>();
         headers.put("content-type","application/json;charset = UTF-8");
         Response response = baseRestClient.whenGetRequestIsInvoked(Resources.CREATE_USER, headers);
-        Assert.assertEquals(response.getStatusCode(), HttpStatus.SC_CREATED);
+        Assert.assertEquals(response.getStatusCode(), HttpStatus.SC_OK);
         System.out.println(response.getStatusCode());
     }
 
