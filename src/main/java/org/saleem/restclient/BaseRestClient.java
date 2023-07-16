@@ -44,6 +44,10 @@ public class BaseRestClient {
         return this.whenRequestIsInvoked(HttpType.POST,resources,headers,payload,null,null,null);
     }
 
+    public Response whenGetRequestIsInvoked(Resources resources, HashMap<String,String> headers){
+        return this.whenRequestIsInvoked(HttpType.GET,resources,headers,null,null,null,null);
+    }
+
     public Response whenRequestIsInvoked(HttpType httpType,
                                          Resources resource,
                                          HashMap<String, String> headers,

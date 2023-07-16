@@ -31,4 +31,9 @@ public class Test1 extends BaseTest{
         Assert.assertEquals(createdUser.getName(),name);
     }
 
+    @Test(groups = "smoke")
+    public void verifyListOfUsers(){
+        ReqresClient.getInstance().getListOfUsers();
+    }
+
 }
