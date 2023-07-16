@@ -5,7 +5,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.saleem.model.User;
 import org.saleem.restclient.ReqresClient;
-import org.saleem.utils.SerializationHelper;
+import org.saleem.utils.common.SerializationHelper;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;

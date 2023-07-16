@@ -1,4 +1,4 @@
-package org.saleem.utils;
+package org.saleem.utils.dbutils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,4 +1,4 @@
-package org.saleem.utils;
+package org.saleem.utils.common;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;

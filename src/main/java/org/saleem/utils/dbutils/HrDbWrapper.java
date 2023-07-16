@@ -1,11 +1,13 @@
-package org.saleem.utils;
+package org.saleem.utils.dbutils;
+
+import org.saleem.utils.common.PropertyReader;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HrDbWrapper extends BaseDbWrapper{
+public class HrDbWrapper extends BaseDbWrapper {
 
     private static HrDbWrapper hrDbWrapper;
 

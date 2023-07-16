@@ -3,7 +3,6 @@ package reqres;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.saleem.restclient.ReqresClient;
-import org.testng.ITest;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;

@@ -5,8 +5,8 @@ import io.restassured.response.Response;
 import org.apache.http.HttpStatus;
 import org.saleem.enums.Resources;
 import org.saleem.model.User;
-import org.saleem.utils.PropertyReader;
-import org.saleem.utils.SerializationHelper;
+import org.saleem.utils.common.PropertyReader;
+import org.saleem.utils.common.SerializationHelper;
 import org.testng.Assert;
 
 import java.util.HashMap;
