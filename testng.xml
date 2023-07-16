@@ -3,6 +3,7 @@
 <suite name="Practice Suite">
     <test name="regression">
         <classes>
+            <class name="reqres.ListOfUsersTest"/>
             <class name="reqres.CreateUsersTest"/>
         </classes>
     </test> <!-- Test -->
